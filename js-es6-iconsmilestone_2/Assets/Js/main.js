@@ -100,15 +100,44 @@ const icons = [
 	}
 ];
 
+// seleziona elementi DOM
+const classUserElement = document.getElementsByClassName("user");
+const classVegetableElement = document.getElementsByClassName("vegetable");
+const classAnimalElement = document.getElementsByClassName("animal");
 
 icons.forEach(singleIcon => {
-    console.log(singleIcon);
+    /* console.log(singleIcon); */
     const cardElement = ` <div class="card">
-                        <i class="${singleIcon.family} ${singleIcon.prefix}${singleIcon.name}"></i>
+                        <i class="${singleIcon.family} ${singleIcon.prefix}${singleIcon.name} ${singleIcon.type}"></i>
                         <p class="text">${singleIcon.name.toLocaleUpperCase()}</p>
                     </div>`
 
 
     document.querySelector(".cards").insertAdjacentHTML("beforeend", cardElement)
-    
+
+
+	if(singleIcon.type == "animal") {
+		 for (let i = 0; i < classAnimalElement.length; i++) {
+	classAnimalElement[i].classList.add("blue")
+		 }
+  } else if (singleIcon.type == "vegetable") {
+	  for (let i = 0; i < classVegetableElement.length; i++) {
+	classVegetableElement[i].classList.add("orange")
+		 }
+
+  }
+  else if (singleIcon.type == "user") {
+	for (let i = 0; i < classUserElement.length; i++) {
+	classUserElement[i].classList.add("purple")
+		 }
+
+  }    
 });
+
+
+
+
+	
+ 
+
+  

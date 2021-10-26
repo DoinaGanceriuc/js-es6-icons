@@ -19,7 +19,6 @@ header > nav {
 
 main {
   background-color: #dddddd;
-  height: 800px;
 }
 .cards {
   display: flex;
@@ -47,4 +46,13 @@ main {
 .text {
   font-size: 0.8rem;
   font-weight: bold;
+}
+.blue {
+  color: #0000ff;
+}
+.orange {
+  color: #ffa500;
+}
+.purple {
+  color: #800080;
 }
