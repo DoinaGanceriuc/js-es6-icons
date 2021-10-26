@@ -99,3 +99,16 @@ const icons = [
 		family: 'fas'
 	}
 ];
+
+
+icons.forEach(singleIcon => {
+    console.log(singleIcon);
+    const cardElement = ` <div class="card">
+                        <i class="${singleIcon.family} ${singleIcon.prefix}${singleIcon.name}"></i>
+                        <p class="text">${singleIcon.name.toLocaleUpperCase()}</p>
+                    </div>`
+
+
+    document.querySelector(".cards").insertAdjacentHTML("beforeend", cardElement)
+    
+});

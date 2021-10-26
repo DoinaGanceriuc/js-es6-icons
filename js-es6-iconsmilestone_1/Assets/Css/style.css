@@ -41,5 +41,10 @@ main {
   margin: 0 80px 100px 0;
 }
 .card i {
-  color: #0000ff;
+  font-size: 2rem;
+  padding-bottom: 5px;
+}
+.text {
+  font-size: 0.8rem;
+  font-weight: bold;
 }
