@@ -1,5 +1,5 @@
-/* Milestone 2
-Coloriamo le icone per tipo */
+/* Milestone 3
+Creiamo una select con i tipi di icone e usiamola per filtrare le icone */
 
 const icons = [
 	{
@@ -133,6 +133,8 @@ icons.forEach(singleIcon => {
 
   }    
 });
+
+
 
 
 

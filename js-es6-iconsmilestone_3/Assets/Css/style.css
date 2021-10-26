@@ -14,12 +14,14 @@ header h3 {
   text-align: center;
 }
 
-header > nav {
+header > .filters {
   background-color: #29b1dd;
-  height: 100px;
+  height: 70px;
   color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 70px;
 }
-
 main {
   background-color: #dddddd;
 }
