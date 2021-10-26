@@ -104,9 +104,24 @@ const icons = [
 const classUserElement = document.getElementsByClassName("user");
 const classVegetableElement = document.getElementsByClassName("vegetable");
 const classAnimalElement = document.getElementsByClassName("animal");
+const selectElement = document.getElementById("type");
+const cardsElement = document.querySelector(".cards")
+
+
+//cardsElement.innerHTML = " ";
+
+
+function addIcons () {
+	
+
+cardsElement.innerHTML = " ";
+
 
 icons.forEach(singleIcon => {
-    /* console.log(singleIcon); */
+
+	if (selectElement.value == singleIcon.type || selectElement.value == "all") {
+		console.log(selectElement.value);
+		
     const cardElement = ` <div class="card">
                         <i class="${singleIcon.family} ${singleIcon.prefix}${singleIcon.name} ${singleIcon.type}"></i>
                         <p class="text">${singleIcon.name.toLocaleUpperCase()}</p>
@@ -116,24 +131,37 @@ icons.forEach(singleIcon => {
     document.querySelector(".cards").insertAdjacentHTML("beforeend", cardElement)
 
 
-	if(singleIcon.type == "animal") {
-		 for (let i = 0; i < classAnimalElement.length; i++) {
-	classAnimalElement[i].classList.add("blue")
-		 }
+	if (singleIcon.type == "animal") {
+		blueColor(classAnimalElement)
   } else if (singleIcon.type == "vegetable") {
-	  for (let i = 0; i < classVegetableElement.length; i++) {
-	classVegetableElement[i].classList.add("orange")
-		 }
-
-  }
-  else if (singleIcon.type == "user") {
-	for (let i = 0; i < classUserElement.length; i++) {
-	classUserElement[i].classList.add("purple")
-		 }
-
-  }    
+	  	orangeColor(classVegetableElement)
+  } else if (singleIcon.type == "user") {
+	  	purpleColor(classUserElement)
+  } 
+	}
 });
+}
 
+addIcons ()
+
+selectElement.addEventListener("change", addIcons)
+
+
+function blueColor(typeElement) {
+	for (let i = 0; i < typeElement.length; i++) {
+	typeElement[i].classList.add("blue")
+		 }
+}
+function orangeColor(typeElement) {
+	for (let i = 0; i < typeElement.length; i++) {
+	typeElement[i].classList.add("orange")
+		 }
+}
+function purpleColor(typeElement) {
+	for (let i = 0; i < typeElement.length; i++) {
+	typeElement[i].classList.add("purple")
+		 }
+}
 
 
 

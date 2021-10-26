@@ -6,7 +6,9 @@
 body {
   font-family: "Acme", sans-serif;
 }
-
+header .title {
+  margin-top: 1.5rem;
+}
 header h1 {
   color: #29b1dd;
 }
